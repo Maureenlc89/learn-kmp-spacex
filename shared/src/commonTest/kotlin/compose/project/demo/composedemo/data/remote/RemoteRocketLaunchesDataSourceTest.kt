@@ -1,11 +1,10 @@
 package compose.project.demo.composedemo.data.remote
 
-import compose.project.demo.composedemo.di.compose.project.demo.composedemo.data.remote.RemoteRocketLaunchesDataSource
+import composedemo.data.remote.RemoteRocketLaunchesDataSource
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.http.ContentType.Application.Json
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.headersOf

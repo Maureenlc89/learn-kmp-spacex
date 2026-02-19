@@ -1,6 +1,6 @@
-package compose.project.demo.composedemo.di.compose.project.demo.composedemo.data.remote
+package composedemo.data.remote
 
-import compose.project.demo.composedemo.di.compose.project.demo.composedemo.domain.entity.RocketLaunch
+import composedemo.domain.entity.RocketLaunch
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get

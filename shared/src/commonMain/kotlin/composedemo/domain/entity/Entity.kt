@@ -1,4 +1,4 @@
-package compose.project.demo.composedemo.di.compose.project.demo.composedemo.domain.entity
+package composedemo.domain.entity
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -20,5 +20,5 @@ data class Links(
     @SerialName("article") val article: String?,
 )
 
-@kotlinx.serialization.Serializable
+@Serializable
 data class Patch(@SerialName("small") val small: String?, @SerialName("large") val large: String?)
