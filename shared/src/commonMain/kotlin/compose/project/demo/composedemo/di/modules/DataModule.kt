@@ -14,3 +14,7 @@ val dataModule = module {
         )
     }
 }
+
+fun single(function: () -> RemoteRocketLaunchesDataSource) {
+        TODO("Not yet implemented")
+}
