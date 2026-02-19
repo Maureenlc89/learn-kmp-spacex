@@ -1,4 +1,4 @@
-package composedemo.domain.entity
+package compose.project.demo.composedemo.domain.entity
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

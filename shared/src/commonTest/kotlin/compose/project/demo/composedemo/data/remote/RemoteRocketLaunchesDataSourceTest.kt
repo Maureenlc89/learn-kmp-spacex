@@ -1,6 +1,6 @@
 package compose.project.demo.composedemo.data.remote
 
-import composedemo.data.remote.RemoteRocketLaunchesDataSource
+import compose.project.demo.composedemo.data.remote.RemoteRocketLaunchesDataSource
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond

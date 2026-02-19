@@ -1,6 +1,6 @@
-package composedemo.data.remote
+package compose.project.demo.composedemo.data.remote
 
-import composedemo.domain.entity.RocketLaunch
+import compose.project.demo.composedemo.domain.entity.RocketLaunch
 import kotlinx.coroutines.flow.Flow
 
 interface IRemoteRocketLaunchesDataSource {
