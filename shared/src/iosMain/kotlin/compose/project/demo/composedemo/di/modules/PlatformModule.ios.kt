@@ -1,7 +1,9 @@
 package compose.project.demo.composedemo.di.modules
 
+import compose.project.demo.composedemo.data.local.DriverFactory
 import org.koin.core.module.Module
+import org.koin.dsl.module
 
-actual fun platformModule(): Module {
-    TODO("Not yet implemented")
+actual fun platformModule(): Module = module {
+    single { DriverFactory() }
 }

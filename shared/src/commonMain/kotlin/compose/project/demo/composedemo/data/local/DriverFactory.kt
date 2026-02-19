@@ -1,4 +1,7 @@
 package compose.project.demo.composedemo.data.local
 
-class DriverFactory {
+import app.cash.sqldelight.db.SqlDriver
+
+expect class DriverFactory {
+    fun createDriver(): SqlDriver
 }
