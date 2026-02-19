@@ -1,0 +1,4 @@
+package sqldelight.compose.project.demo.composedemo.data.local
+
+class AppDatabase {
+}
