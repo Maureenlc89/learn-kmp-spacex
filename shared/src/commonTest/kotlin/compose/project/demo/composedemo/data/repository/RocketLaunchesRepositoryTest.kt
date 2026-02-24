@@ -1,10 +1,27 @@
 package compose.project.demo.composedemo.data.repository
 
 import RocketLaunchesRepository
+import compose.project.demo.composedemo.data.local.ILocalRocketLaunchesDataSource
+import compose.project.demo.composedemo.data.remote.IRemoteRocketLaunchesDataSource
+import compose.project.demo.composedemo.domain.entity.Links
+import compose.project.demo.composedemo.domain.entity.Patch
+import compose.project.demo.composedemo.domain.entity.RocketLaunch
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
+import dev.mokkery.answering.returns
+import dev.mokkery.every
+import dev.mokkery.mock
+import dev.mokkery.verify
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.test.TestScope
 
 class RocketLaunchesRepositoryTest {
+
 
     private val localDataSource = mock<ILocalRocketLaunchesDataSource>()
     private val remoteDataSource = mock<IRemoteRocketLaunchesDataSource>()
@@ -56,7 +73,7 @@ class RocketLaunchesRepositoryTest {
                     links = Links(Patch(null, null), null),
                 )
             )
-        every { remoteDataSource.latestLaunches() } returns flow { throw Exception("Remote error") }
+        every { remoteDataSource.latestLaunches() } returns flowOf { throw Exception("Remote error") }
         every { localDataSource.getAllLaunches() } returns cachedLaunches
 
         val repository =
@@ -72,5 +89,10 @@ class RocketLaunchesRepositoryTest {
         // Assert
         assertEquals(cachedLaunches, result)
         verify { localDataSource.getAllLaunches() }
+    }
+
+    private fun TestScope.flowOf(value: Any): Flow<List<RocketLaunch>> {
+
+        return TODO("Provide the return value")
     }
 }
